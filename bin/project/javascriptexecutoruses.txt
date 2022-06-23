@@ -1,0 +1,78 @@
+Click some element
+
+Syntax:
+Web Element element=driver. findElement(By.id(“enter element id”)); //locate the web element
+JavascriptExecutor js=(JavascriptExecutor)driver; // cast driver object to JavaScript Executor
+js.executeScript(“arguments[0].click();”, element); //access the methods
+or
+js.executeScript(“document.getElementById(‘enter element id’).click();”);
+
+
+
+2. Scrolling page
+· Scroll down till end of page
+Syntax:
+JavaScript Executor js=(JavaScript Executor)driver;
+ js.executeScript(“window.scrollTo(0,document.body.scrollHeight)”);
+ 
+ 
+· Scroll by the visibility of web element on the page
+Syntax:
+WebElement element=driver.findElement(By.id(“enter element id”));
+JavascriptExecutor js=(JavascriptExecutor)driver;
+ js.executeScript(“arguments[0].scrollIntoView();”, element);
+ 
+ 
+ 
+· Scroll down in a page by specified pixels
+Syntax:
+JavascriptExecutor   js=(JavascriptExecutor)driver;js.executeScript(“window.scrollBy(0,2000)”,  “ ”); //Specify the number of pixels the page to be scrolled
+
+
+3. Drawing a border around the element
+Syntax:
+WebElement element=driver.findElement(By.id(“enter element id”));
+JavascriptExecutor js=(JavascriptExecutor)driver;
+ js.executeScript(“arguments[0].style.border=’3px solid red’”, element);
+This will mark the element in the page with red border
+
+
+
+4. Capturing the title or URL of the page
+Syntax:
+JavascriptExecutor js=(JavascriptExecutor)driver;
+String title= js.executeScript(“return document.title;”).toString();
+String url=js.executeScript(“return document.URL;”).toString();
+
+
+
+5. Generating Alert
+Syntax:
+JavascriptExecutor js=(JavascriptExecutor)driver;
+js.executeScript(“alert(‘ This is an alert ‘);”);
+
+
+
+6. Refreshing page
+Syntax:
+JavascriptExecutor js=(JavascriptExecutor)driver;
+js.executeScript(“history.go(0)”);
+
+
+7. Highlight an element
+To  high light the element , first we have to identify the element  uniquely. ‘style.backgroundColor’ changes the background of the element  to ‘custom color’.
+Syntax:
+JavascriptExecutor js=(JavascriptExecutor)driver;
+js.executeScript(“arguments[0].setAttribute(‘ style ’, ‘background: yellow; border: 2px solid red;’); ”, element);
+
+
+8. Zoom levels with JavaScript Executor
+Use ‘document.body.style.zoom’ to set the zoom level on the web page.
+The below code sets the zoom level to 90%.
+Syntax:
+JavascriptExecutor js=(JavascriptExecutor)driver;
+js.executeScript(“document.body.style.zoom=’90%’ ”);
+
+
+
+AC71-E689
